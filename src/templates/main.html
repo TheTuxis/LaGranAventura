@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                {% trans 'Nombre'%}
+            </th>
+            <th>
+                {% trans 'Autor'%}
+            </th>
+            <th>
+                {% trans 'Fecha Creacion'%}
+            </th>
+            <th>
+                {% trans 'Fecha Actualizacion'%}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books_list %}
+        <tr>
+            <td>
+                <img class="img-thumbnail" src="{{ book.pic.url }}" alt="" style="height: 120px;" />
+            </td>
+            <td style="vertical-align: middle;">
+                <a href="{{book.id}}" >{{ book.name }}</a>
+            </td>
+            <td style="vertical-align: middle;">
+                {{ book.author }}
+            </td>
+            <td style="vertical-align: middle;">
+                {{ book.date_created }}
+            </td>
+            <td style="vertical-align: middle;">
+                {{ book.date_update }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

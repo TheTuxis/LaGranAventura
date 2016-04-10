@@ -1,7 +1,12 @@
-{% extends 'base.html' %} {% block content %}
-{% csrf_token %}
+{% extends 'base.html' %}
 
 
-{{ form }} {{ form.errors }}
-cancelar  aceptar
+{% block body %}
+
+    <form class="" action="." method="post">
+        {% csrf_token %}
+        {{ form }} {{ form.errors }}
+        <button name="button" type="submit"></button>
+    </form>
+
 {% endblock %}
