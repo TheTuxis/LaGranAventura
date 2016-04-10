@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form method="post" action=".">
+    {% csrf_token %}
+    <div class="form-group">
+        <input id="id_username" type="text" class="form-control" name="username" maxlength="30" placeholder="Ingrese el usuario">
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" id="id_password" class="form-control" placeholder="Ingrese la clave">
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+</form>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+  {% if form.errors %}
+    <div class="alert alert-danger">
+      <strong>Error en Login:</strong>
+      El usuario o la clave ingresada no es correcto. Por favor vuelva a intentarlo.
+    </div>
+  {% endif %}
+  </div>
+</div>
+{% endblock %}
