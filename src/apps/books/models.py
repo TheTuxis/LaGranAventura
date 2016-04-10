@@ -37,6 +37,10 @@ class Book(models.Model):
     def __unicode__(self):
         return "%s" % (self.name,)
 
+    @property
+    def get_first_page(self):
+        return Page.objects.filter(book=self).order_by('id')[0]
+
 
 class Page(models.Model):
     book = models.ForeignKey(Book, blank=True, null=True)
