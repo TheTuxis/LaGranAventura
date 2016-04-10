@@ -1,9 +1,18 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from apps.core.models import UserProfile
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+
+from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('user', 'avatar')
+
+
+class SignUpForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("username", "email", "first_name", "last_name")
