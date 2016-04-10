@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block body %}
+<p>{% trans 'Nombre Libro'%}:{{ book.name }}</p>
+<p>{% trans 'Pagina'%}:{{ page.name }}</p>
+<p>{% trans 'Pagina #'%}:{{ page.page_number }}</p>
+<p>{% trans 'Descripcion'%}:{{ page.description }}</p>
+<form class="" action="." method="post">
+    {{form}}
+</form>
+<a class="btn btn-primary" type="button" name="button" href="/book/{{book.id}}/{{book.get_first_page.id}}/">Jugar</a>
+{% endblock %}

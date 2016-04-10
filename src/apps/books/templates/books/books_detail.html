@@ -5,5 +5,5 @@
 <img class="img-thumbnail" src="{{ book.pic.url }}" alt="" style="height: 120px;" /><br>
 <p>{% trans 'Nombre'%}:{{ book.name }}</p>
 <p>{% trans 'Descripcion'%}:{{ book.description }}</p>
-<a class="btn btn-primary" type="button" name="button" href="{{book.get_first_page.id}}">Jugar</a>
+<a class="btn btn-primary" type="button" name="button" href="/book/{{book.id}}/{{book.get_first_page.id}}/">Jugar</a>
 {% endblock %}

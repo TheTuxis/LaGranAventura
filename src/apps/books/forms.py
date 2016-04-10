@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from apps.books.models import Book, Page, Option, PlayerSection, PlayerSectionDetail
+from .models import Book, Page, Option, PlayerSection, PlayerSectionDetail
 
 
 class BookForm(forms.ModelForm):

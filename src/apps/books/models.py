@@ -39,7 +39,10 @@ class Book(models.Model):
 
     @property
     def get_first_page(self):
-        return Page.objects.filter(book=self).order_by('id')[0]
+        try:
+            return Page.objects.filter(book=self).order_by('page_number')[0]
+        except:
+            return None
 
 
 class Page(models.Model):

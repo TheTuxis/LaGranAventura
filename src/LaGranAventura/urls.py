@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('apps.core.urls')),
+    url(r'^book/', include('apps.books.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^sign_up/$', sign_up),
     url(r'^accounts/login/$', auth_views.login),
