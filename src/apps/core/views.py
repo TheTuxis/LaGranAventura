@@ -1,14 +1,20 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm
+from ..books.models import Book
 
 
 @login_required()
 def main(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    books_list = Book.objects.filter(published=True)
+    template = loader.get_template('main.html')
+    context = {
+        'books_list': books_list,
+    }
+    return HttpResponse(template.render(context, request))
 
 
 def sign_up(request):

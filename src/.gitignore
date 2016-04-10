@@ -1,0 +1,6 @@
+.DS_Store
+venv/
+static/
+media/
+db.sqlite3
+.DS_Store
